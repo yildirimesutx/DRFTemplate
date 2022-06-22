@@ -1,6 +1,10 @@
 from .base import *
 
 
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
 THIRD_PARTY_APPS = [
     "debug_toolbar",
 ]
