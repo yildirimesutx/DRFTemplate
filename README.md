@@ -1,3 +1,6 @@
+
+<img src='/FlightReservationERD.png' ref=''>
+
 # SWAGGER
 
 https://drf-yasg.readthedocs.io/en/stable/readme.html
