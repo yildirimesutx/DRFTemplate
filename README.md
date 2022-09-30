@@ -490,7 +490,7 @@ def create_token(sender, instance=None, created=False, **kwargs):
         Token.objects.create(user=instance)
 
 
-create_token satıra sabit gelmekte, üzerinde tanımlanan dekoratır önenli, sender in user modeli create olunca token ni kaydet
+create_token satırı sabit gelmekte, üzerinde tanımlanan dekoratır önemli, sender in user modeli create olunca token ni kaydet
 
 apps.py da bu yazılan signalin çalışması için 
 
@@ -508,7 +508,8 @@ class UsersConfig(AppConfig):
         import users.signals
     
 
-register olduktan sonra token da oluşması için view içirisine ekledik, class içine, bunun sebebi user kayıt olduktan sonra token oluyor, tekrar login için response göndermiyoruz. 
+- register olduktan sonra token da oluştu, fakat bize tokeni filed olarak dönmedi, admin panelden kontrol edilebilir. 
+- Bu olusan tokeni frontende gönderilmesi iciniçin view içirisine override islemi yaptık. 
 
 def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
